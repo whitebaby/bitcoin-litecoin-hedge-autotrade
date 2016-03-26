@@ -1,0 +1,223 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>使用HTML5新增标签实现页面布局</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <style>
+    section {
+        width: 800px;
+        margin: 0 auto;
+    }
+    
+    article {
+        width: 400px;
+        float: left;
+        height: 100%;
+        background-color: #AFAFAF;
+    }
+    
+    aside {
+        width: 400px;
+        float: right;
+        height: 100%;
+        background-color: #7f7f7f;
+    }
+    
+    header {
+        width: 100%;
+        background-color: #ddd;
+        text-align: center;
+    }
+    
+    footer {
+        width: 100%;
+        background-color: #FFF;
+    }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading">交易设定</div>
+            <!-- Table -->
+            <table border="1" class="table">
+                <tr>
+                    <td width="60">币种</td>
+                    <td width="200">OK买一价格</td>
+                    <td width="200">OK买一深度</td>
+                    <td width="60">当前差价</td>
+                    <td width="60">最小数量</td>
+                    <td width="60">最大数量</td>
+                    <td width="60">交易差价</td>
+                    <td width="200">huobi卖一价格</td>
+                    <td width="200">huobi卖一深度</td>
+                    <td width="60">启用</td>
+                </tr>
+                <tr>
+                    <td>BTC</td>
+                    <td id="OkBtcBuyPrice">&nbsp;</td>
+                    <td id="OkBtcBuyDepth">&nbsp;</td>
+                    <td id="BtcTrueGapPrice1">&nbsp;</td>
+                    <td>
+                        <input type="number" name="BtcReadyMinAmount1" id="BtcReadyMinAmount1" min="0.5" max="10" />
+                    </td>
+                    <td>
+                        <input type="number" name="BtcReadyMaxAmount1" id="BtcReadyMaxAmount1" min="0.5" max="10" />
+                    </td>
+                    <td>
+                        <input type="number" name="BtcReadyGapPrice1" id="BtcReadyGapPrice1" min="0.5" max="10" />
+                    </td>
+                    <td id="HuoBtcSellPrice">&nbsp;</td>
+                    <td id="HuoBtcSellDepth">&nbsp;</td>
+                    <td id="CheckBox1">
+                        <input type="checkbox" name="checkbox1" id="checkbox1">
+                        <label for="checkbox">启用 </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>LTC</td>
+                    <td id="OkLtcBuyPrice">&nbsp;</td>
+                    <td id="OkLtcBuyDepth">&nbsp;</td>
+                    <td id="LtcTrueGapPrice1">&nbsp;</td>
+                    <td>
+                        <input type="number" name="LtcReadyMinAmount1" id="LtcReadyMinAmount1" min="1" max="20" />
+                    </td>
+                    <td>
+                        <input type="number" name="LtcReadyMaxAmount1" id="LtcReadyMaxAmount1" min="0.5" max="10" />
+                    </td>
+                    <td>
+                        <input type="number" name="LtcReadyGapPrice1" id="LtcReadyGapPrice1" min="0.5" max="10" />
+                    </td>
+                    <td id="HuoLtcSellPrice">&nbsp;</td>
+                    <td id="HuoLtcSellDepth">&nbsp;</td>
+                    <td id="CheckBox2">
+                        <input type="checkbox" name="checkbox2" id="checkbox2">
+                        <label for="checkbox">启用 </label>
+                    </td>
+                </tr>
+            </table>
+            </br>
+            </br>
+            <table border="1" class="table">
+                <tr>
+                    <td width="60">币种</td>
+                    <td width="200">OK卖一价格</td>
+                    <td width="200">OK卖一深度</td>
+                    <td width="60">当前差价</td>
+                    <td width="60">最小数量</td>
+                    <td width="60">最大数量</td>
+                    <td width="60">交易差价</td>
+                    <td width="200">huobi买一价格</td>
+                    <td width="200">huobi买一深度</td>
+                    <td width="60">启用</td>
+                </tr>
+                <tr>
+                    <td>BTC</td>
+                    <td id="OkBtcSellPrice">&nbsp;</td>
+                    <td id="OkBtcSellDepth">&nbsp;</td>
+                    <td id="BtcTrueGapPrice2">&nbsp;</td>
+                    <td id="ReadyAmount">
+                        <input type="number" name="BtcReadyMinAmount2" id="BtcReadyMinAmount2" min="0.5" max="1" />
+                    </td>
+                    <td id="ReadyGapPrice">
+                        <input type="number" name="BtcReadyMaxAmount2" id="BtcReadyMaxAmount2" min="0.5" max="1" />
+                    </td>
+                    <td id="ReadyGapPrice">
+                        <input type="number" name="BtcReadyGapPrice2" id="BtcReadyGapPrice2" min="0.5" max="1" />
+                    </td>
+                    <td id="HuoBtcBuyPrice">&nbsp;</td>
+                    <td id="HuoBtcBuyDepth">&nbsp;</td>
+                    <td id="CheckBox3">
+                        <input type="checkbox" name="checkbox3" id="checkbox3">
+                        <label for="checkbox">启用</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>LTC</td>
+                    <td id="OkLtcSellPrice">&nbsp;</td>
+                    <td id="OkLtcSellDepth">&nbsp;</td>
+                    <td id="LtcTrueGapPrice2">&nbsp;</td>
+                    <td id="ReadyAmount">
+                        <input type="number" name="LtcReadyMinAmount2" id="LtcReadyMinAmount2" min="1" max="2" //>
+                    </td>
+                    <td id="ReadyGapPrice">
+                        <input type="number" name="LtcReadyMaxAmount2" id="LtcReadyMaxAmount2" min="0.5" max="1" />
+                    </td>
+                    <td id="ReadyGapPrice">
+                        <input type="number" name="LtcReadyGapPrice2" id="LtcReadyGapPrice2" min="0.5" max="1" />
+                    </td>
+                    <td id="HuoLtcBuyPrice">&nbsp;</td>
+                    <td id="HuoLtcBuyDepth">&nbsp;</td>
+                    <td id="CheckBox4">
+                        <input type="checkbox" name="checkbox4" id="checkbox4">
+                        <label for="checkbox">启用</label>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <section>
+        <div>
+            <table border="1">
+                <caption>
+                    订单汇总
+                </caption>
+                <tbody>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">币种</th>
+                        <th scope="col">买入市场</th>
+                        <th scope="col">卖出市场</th>
+                        <th scope="col">数量</th>
+                        <th scope="col">预计利润</th>
+                        <th scope="col">实际利润</th>
+                        <th scope="col">状态</th>
+                        <th scope="col">时间</th>
+                        <th scope="col">操作</th>
+                    </tr>
+                    <tr>
+                        <td width="95">&nbsp;</td>
+                        <td width="95">&nbsp;</td>
+                        <td width="95">&nbsp;</td>
+                        <td width="95">&nbsp;</td>
+                        <td width="95">&nbsp;</td>
+                        <td width="95">&nbsp;</td>
+                        <td width="95">&nbsp;</td>
+                        <td width="95">&nbsp;</td>
+                        <td width="95">&nbsp;</td>
+                        <td width="95">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</body>
+<script language="JavaScript" type="text/javascript" src="js/jquery.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="js/bootstrap.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="js/getprice2.js"></script>
+<script language="JavaScript" type="text/javascript" src="js/db3.js"></script>
+<script type="text/javascript">
+initDatabase();
+setInterval("GetOkPrice()", 1000);
+setInterval("GetHuoPrice()", 1000);
+setInterval("PriceGapCheck()", 1000);
+
+</script>)
+
+</html>
